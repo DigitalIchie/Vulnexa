@@ -1,0 +1,43 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "https://backend-digitalichies-projects.vercel.app/$1"
+    },
+    {
+      "source": "/new-scan",
+      "destination": "/new-scan.html"
+    },
+    {
+      "source": "/scan-results",
+      "destination": "/scan-results.html"
+    },
+    {
+      "source": "/report",
+      "destination": "/report.html"
+    },
+    {
+      "source": "/admin",
+      "destination": "/admin.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
+      ]
+    }
+  ]
+}

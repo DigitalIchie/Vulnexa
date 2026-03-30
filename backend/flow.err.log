@@ -1,0 +1,9 @@
+[31m[Nest] 14020  - [39m03/27/2026, 11:14:25 AM [31m  ERROR[39m [38;5;3m[ScanService] [39m[31mScan execution failed for 48a6c634-fb71-4aa1-9719-a8f61bb25162: browserType.launch: Executable doesn't exist at C:\Users\DELL\AppData\Local\ms-playwright\chromium_headless_shell-1208\chrome-headless-shell-win64\chrome-headless-shell.exe
+╔═════════════════════════════════════════════════════════════════════════╗
+║ Looks like Playwright Test or Playwright was just installed or updated. ║
+║ Please run the following command to download new browsers:              ║
+║                                                                         ║
+║     npx playwright install                                              ║
+║                                                                         ║
+║ <3 Playwright Team                                                      ║
+╚═════════════════════════════════════════════════════════════════════════╝[39m

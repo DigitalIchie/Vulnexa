@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vulnexa | New Scan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="tailwind.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="dark bg-canvas text-slate-100 antialiased">
+  <div class="min-h-screen bg-gradient-to-br from-canvas via-[#0f1730] to-[#141c35]">
+    <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+      <header class="mb-6 rounded-2xl border border-slate-800/80 bg-panel/80 p-4 backdrop-blur">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <div class="flex items-center gap-3">
+            <img src="vulnexa-logo.png" alt="Vulnexa logo" class="h-14 w-14 rounded-lg border border-cyan-300/30 bg-slate-950/60 p-1" />
+            <div>
+              <p class="text-xs leading-tight text-cyan-300">Vulnexa &mdash; Intelligent Vulnerability Discovery &amp; Attack Simulation</p>
+              <h1 class="text-2xl font-bold">Start a New Scan</h1>
+            </div>
+          </div>
+          <nav class="flex flex-wrap gap-2 text-sm">
+            <a class="nav-link" href="index.html">Dashboard</a>
+            <a class="nav-link active" href="new-scan.html">New Scan</a>
+            <a class="nav-link" href="scan-results.html">Scan Results</a>
+            <a class="nav-link" href="report.html">Report</a>
+            <a class="nav-link" href="admin.html">Admin</a>
+          </nav>
+          <div class="flex items-center gap-2">
+            <span id="authStatus" class="badge badge-slate">Not Signed In</span>
+            <button id="logoutBtn" class="btn-ghost hidden" type="button">Logout</button>
+          </div>
+        </div>
+      </header>
+
+      <main class="grid grid-cols-1 gap-6 lg:grid-cols-3">
+        <section class="card lg:col-span-2">
+          <h2 class="text-lg font-semibold">Target Configuration</h2>
+          <p class="mt-1 text-sm text-slate-400">Enter a target URL to run an AI-powered penetration testing scan.</p>
+          <form id="scanForm" class="mt-6 space-y-4">
+            <div>
+              <label for="targetUrl" class="mb-2 block text-sm font-medium text-slate-300">Target URL</label>
+              <input
+                id="targetUrl"
+                name="targetUrl"
+                type="url"
+                required
+                placeholder="https://example.com"
+                class="w-full rounded-xl border border-slate-700 bg-slate-900/60 px-4 py-3 text-slate-100 placeholder:text-slate-500 focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/30"
+              />
+            </div>
+            <button
+              id="startScanBtn"
+              type="submit"
+              class="btn-primary"
+            >
+              Start Scan
+            </button>
+          </form>
+        </section>
+
+        <aside class="card">
+          <h3 class="text-base font-semibold">Scan Status</h3>
+          <p class="mt-1 text-sm text-slate-400">Real-time execution state</p>
+          <div class="mt-4 rounded-xl border border-slate-800 bg-slate-900/50 p-4">
+            <div class="flex items-center justify-between">
+              <p class="text-sm text-slate-300">Current State</p>
+              <span id="scanStatusBadge" class="badge badge-slate">Idle</span>
+            </div>
+            <div class="mt-4 h-2 w-full overflow-hidden rounded-full bg-slate-800">
+              <div id="scanProgress" class="h-full w-0 rounded-full bg-cyan-300 transition-all duration-500"></div>
+            </div>
+            <p id="scanStatusText" class="mt-3 text-sm text-slate-400">No active scans.</p>
+            <p id="scanMetaText" class="mt-2 text-xs text-slate-500"></p>
+          </div>
+        </aside>
+      </main>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
+

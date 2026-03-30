@@ -1,0 +1,34 @@
+[32m[Nest] 8780  - [39m03/27/2026, 11:12:56 AM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 8780  - [39m03/27/2026, 11:12:56 AM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPrismaModule dependencies initialized[39m[38;5;3m +15ms[39m
+[32m[Nest] 8780  - [39m03/27/2026, 11:12:56 AM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mScannerModule dependencies initialized[39m[38;5;3m +5ms[39m
+[32m[Nest] 8780  - [39m03/27/2026, 11:12:56 AM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mThrottlerModule dependencies initialized[39m[38;5;3m +5ms[39m
+[32m[Nest] 8780  - [39m03/27/2026, 11:12:56 AM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAuditModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 8780  - [39m03/27/2026, 11:12:56 AM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigHostModule dependencies initialized[39m[38;5;3m +2ms[39m
+[32m[Nest] 8780  - [39m03/27/2026, 11:12:56 AM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +11ms[39m
+[32m[Nest] 8780  - [39m03/27/2026, 11:12:56 AM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 8780  - [39m03/27/2026, 11:12:56 AM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 8780  - [39m03/27/2026, 11:12:56 AM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAdminModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 8780  - [39m03/27/2026, 11:12:56 AM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mCrawlerModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 8780  - [39m03/27/2026, 11:12:56 AM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mUsersModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 8780  - [39m03/27/2026, 11:12:56 AM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mJwtModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 8780  - [39m03/27/2026, 11:12:56 AM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mScanModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 8780  - [39m03/27/2026, 11:12:56 AM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAuthModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 8780  - [39m03/27/2026, 11:12:56 AM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAuthController {/auth}:[39m[38;5;3m +1ms[39m
+[32m[Nest] 8780  - [39m03/27/2026, 11:12:56 AM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/csrf-token, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 8780  - [39m03/27/2026, 11:12:56 AM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/register, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 8780  - [39m03/27/2026, 11:12:56 AM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/login, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 8780  - [39m03/27/2026, 11:12:56 AM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/refresh, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 8780  - [39m03/27/2026, 11:12:56 AM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/logout, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 8780  - [39m03/27/2026, 11:12:56 AM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mUsersController {/users}:[39m[38;5;3m +1ms[39m
+[32m[Nest] 8780  - [39m03/27/2026, 11:12:56 AM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/users/me, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 8780  - [39m03/27/2026, 11:12:56 AM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/users, GET} route[39m[38;5;3m +2ms[39m
+[32m[Nest] 8780  - [39m03/27/2026, 11:12:56 AM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/users, POST} route[39m[38;5;3m +2ms[39m
+[32m[Nest] 8780  - [39m03/27/2026, 11:12:56 AM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mScanController {/scans}:[39m[38;5;3m +1ms[39m
+[32m[Nest] 8780  - [39m03/27/2026, 11:12:56 AM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/scans, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 8780  - [39m03/27/2026, 11:12:56 AM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/scans, GET} route[39m[38;5;3m +3ms[39m
+[32m[Nest] 8780  - [39m03/27/2026, 11:12:56 AM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/scans/:scanId, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 8780  - [39m03/27/2026, 11:12:56 AM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/scans/:scanId/findings, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 8780  - [39m03/27/2026, 11:12:56 AM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/scans/:scanId/report, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 8780  - [39m03/27/2026, 11:12:56 AM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAdminController {/admin}:[39m[38;5;3m +1ms[39m
+[32m[Nest] 8780  - [39m03/27/2026, 11:12:56 AM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/admin/dashboard, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 8780  - [39m03/27/2026, 11:12:56 AM [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +0ms[39m

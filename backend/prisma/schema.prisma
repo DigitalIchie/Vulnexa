@@ -1,0 +1,65 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id              String     @id @default(uuid())
+  email           String     @unique
+  passwordHash    String
+  role            String     @default("tester")
+  refreshTokenHash String?
+  scans           Scan[]
+  auditLogs       AuditLog[]
+  createdAt       DateTime   @default(now())
+  updatedAt       DateTime   @updatedAt
+
+  @@index([email])
+}
+
+model Scan {
+  id            String      @id @default(uuid())
+  targetUrl     String
+  targetDomain  String
+  status        String      @default("queued")
+  startedAt     DateTime?
+  completedAt   DateTime?
+  owner         User        @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  ownerId       String
+  findings      Finding[]
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+
+  @@index([ownerId, createdAt])
+  @@index([targetDomain])
+}
+
+model Finding {
+  id          String    @id @default(uuid())
+  scan        Scan      @relation(fields: [scanId], references: [id], onDelete: Cascade)
+  scanId      String
+  type        String
+  severity    String
+  affectedUrl String
+  details     String
+  createdAt   DateTime  @default(now())
+
+  @@index([scanId])
+  @@index([severity])
+}
+
+model AuditLog {
+  id        String   @id @default(uuid())
+  action    String
+  metadata  String?
+  user      User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  userId    String?
+  createdAt DateTime @default(now())
+
+  @@index([userId, createdAt])
+  @@index([action])
+}

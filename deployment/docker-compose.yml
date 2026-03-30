@@ -1,0 +1,38 @@
+version: "3.9"
+
+services:
+  backend:
+    build:
+      context: ../backend
+      dockerfile: Dockerfile
+    env_file:
+      - ../backend/.env
+    restart: unless-stopped
+    expose:
+      - "4000"
+
+  caddy:
+    image: caddy:2.8-alpine
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - ../index.html:/srv/frontend/index.html:ro
+      - ../new-scan.html:/srv/frontend/new-scan.html:ro
+      - ../scan-results.html:/srv/frontend/scan-results.html:ro
+      - ../report.html:/srv/frontend/report.html:ro
+      - ../admin.html:/srv/frontend/admin.html:ro
+      - ../vulnexa-logo.png:/srv/frontend/vulnexa-logo.png:ro
+      - ../app.js:/srv/frontend/app.js:ro
+      - ../tailwind.css:/srv/frontend/tailwind.css:ro
+      - ../styles.css:/srv/frontend/styles.css:ro
+      - caddy_data:/data
+      - caddy_config:/config
+
+volumes:
+  caddy_data:
+  caddy_config:

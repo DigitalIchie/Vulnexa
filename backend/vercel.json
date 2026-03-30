@@ -1,0 +1,16 @@
+{
+  "installCommand": "npm ci --include=dev",
+  "buildCommand": "npm run prisma:generate && npm run build",
+  "functions": {
+    "api/index.js": {
+      "maxDuration": 60,
+      "includeFiles": "prisma/**"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/api/index.js"
+    }
+  ]
+}
