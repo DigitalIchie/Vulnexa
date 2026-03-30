@@ -68,6 +68,16 @@ function bindGlobalAuthUi() {
   const logoutBtn = document.getElementById("logoutBtn");
   const authSection = document.getElementById("authSection");
   
+  // Hide/show Admin link based on role
+  const adminLink = document.querySelector('a[href="admin.html"]');
+  if (adminLink) {
+    if (state.currentUser?.role === "admin") {
+      adminLink.classList.remove("hidden");
+    } else {
+      adminLink.classList.add("hidden");
+    }
+  }
+  
   if (authStatus) {
     if (state.currentUser?.email) {
       authStatus.textContent = `${state.currentUser.role}: ${state.currentUser.email}`;
