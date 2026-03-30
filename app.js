@@ -2,6 +2,7 @@ let API_BASE = resolveApiBase();
 const TOKEN_KEY = "ul_access_token";
 const USER_KEY = "ul_current_user";
 const LAST_SCAN_KEY = "ul_last_scan_id";
+const SAVED_EMAIL_KEY = "ul_saved_email";
 
 const state = {
   csrfToken: null,
@@ -98,6 +99,17 @@ function bindAuthFormIfPresent() {
 
   const registerBtn = document.getElementById("registerBtn");
   const message = document.getElementById("authMessage");
+  const emailInput = document.getElementById("authEmail");
+  const rememberCheckbox = document.getElementById("rememberEmail");
+
+  // Load saved email on page load
+  const savedEmail = localStorage.getItem(SAVED_EMAIL_KEY);
+  if (savedEmail && emailInput) {
+    emailInput.value = savedEmail;
+    if (rememberCheckbox) {
+      rememberCheckbox.checked = true;
+    }
+  }
 
   authForm.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -106,6 +118,15 @@ function bindAuthFormIfPresent() {
 
   registerBtn?.addEventListener("click", async () => {
     await submitAuth("register", message);
+  });
+
+  // Save email when checkbox is toggled
+  rememberCheckbox?.addEventListener("change", (event) => {
+    if (event.target.checked && emailInput?.value) {
+      localStorage.setItem(SAVED_EMAIL_KEY, emailInput.value.trim());
+    } else {
+      localStorage.removeItem(SAVED_EMAIL_KEY);
+    }
   });
 }
 
