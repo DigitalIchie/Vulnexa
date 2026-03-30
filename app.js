@@ -67,16 +67,7 @@ function bindGlobalAuthUi() {
   const authStatus = document.getElementById("authStatus");
   const logoutBtn = document.getElementById("logoutBtn");
   const authSection = document.getElementById("authSection");
-  
-  // Hide/show Admin link based on role
   const adminLink = document.querySelector('a[href="admin.html"]');
-  if (adminLink) {
-    if (state.currentUser?.role === "admin") {
-      adminLink.classList.remove("hidden");
-    } else {
-      adminLink.classList.add("hidden");
-    }
-  }
   
   if (authStatus) {
     if (state.currentUser?.email) {
@@ -94,6 +85,15 @@ function bindGlobalAuthUi() {
       authSection.classList.add("hidden");
     } else {
       authSection.classList.remove("hidden");
+    }
+  }
+
+  // Hide Admin button for non-admin users (role-based access control)
+  if (adminLink) {
+    if (state.currentUser?.role === "admin") {
+      adminLink.classList.remove("hidden");
+    } else {
+      adminLink.classList.add("hidden");
     }
   }
 
