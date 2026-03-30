@@ -66,6 +66,8 @@ async function ensureSession() {
 function bindGlobalAuthUi() {
   const authStatus = document.getElementById("authStatus");
   const logoutBtn = document.getElementById("logoutBtn");
+  const authSection = document.getElementById("authSection");
+  
   if (authStatus) {
     if (state.currentUser?.email) {
       authStatus.textContent = `${state.currentUser.role}: ${state.currentUser.email}`;
@@ -73,6 +75,15 @@ function bindGlobalAuthUi() {
     } else {
       authStatus.textContent = "Not Signed In";
       authStatus.className = "badge badge-slate";
+    }
+  }
+
+  // Hide/show auth section based on login state
+  if (authSection) {
+    if (state.currentUser) {
+      authSection.classList.add("hidden");
+    } else {
+      authSection.classList.remove("hidden");
     }
   }
 
